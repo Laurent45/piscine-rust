@@ -161,9 +161,9 @@ Example:
 
 ```rust
 assert_eq!(largest_group(&[1, 3, 4, 3, 5, 5, 4], &[5, 3]), &[3, 5, 5]);
-assert_eq!(largest_group(&[1, 3, 4, 3, 5, 5, 4], &[5], &[5, 5]));
-assert_eq!(largest_group(&[1, 3, 4, 3, 5, 5, 4], &[], &[]));
-assert_eq!(largest_group(&[1, 3, 4, 3, 5, 5, 4], &[4, 1], &[]));
+assert_eq!(largest_group(&[1, 3, 4, 3, 5, 5, 4], &[5]), &[5, 5]);
+assert_eq!(largest_group(&[1, 3, 4, 3, 5, 5, 4], &[]), &[]);
+assert_eq!(largest_group(&[1, 3, 4, 3, 5, 5, 4], &[4, 1]), &[]);
 ```
 
 Once again, you may need to specify some *lifetime annotations* for the function. To check whether
@@ -261,7 +261,7 @@ Write a **function** that adds two numbers together. The numbers are given as a 
 digits and may be arbitrarly large.
 
 ```rust
-fn big_add(a: &[u8], &[u8]) -> Vec<u8>;
+fn big_add(a: &[u8], b: &[u8]) -> Vec<u8>;
 ```
 
 * `a` and `b` must only contain digits (`b'0'` to `b'9'` included). If anything else is found, the
